@@ -8,9 +8,10 @@
     }
   </style>
   <rect class="background" width="64" height="64"/>
-  <text x="32" y="49"
+  <text x="32" y="53"
         text-anchor="middle"
         font-family="Georgia, 'Times New Roman', serif"
-        font-size="48"
+        font-size="60"
+        font-weight="normal"
         class="letter">V</text>
 </svg>
