@@ -1,9 +1,16 @@
-
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" fill="#ffffff"/>
+  <style>
+    .background { fill: #ffffff; }
+    .letter { fill: #222222; }
+    @media (prefers-color-scheme: dark) {
+      .background { fill: #121212; }
+      .letter { fill: #e5e5e5; }
+    }
+  </style>
+  <rect class="background" width="64" height="64"/>
   <text x="32" y="49"
         text-anchor="middle"
         font-family="Georgia, 'Times New Roman', serif"
         font-size="48"
-        fill="#222222">V</text>
+        class="letter">V</text>
 </svg>
