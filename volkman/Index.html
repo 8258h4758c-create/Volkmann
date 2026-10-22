@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Volkman</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: env(safe-area-inset-top) 16px env(safe-area-inset-bottom);
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      color: #222;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 28px;
+      font-weight: normal;
+    }
+
+    main {
+      display: inline-flex;
+      align-items: baseline;
+      white-space: nowrap;
+    }
+
+    #added-letter {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(-100vh);
+      animation: letter-drop 1.8s cubic-bezier(.2, .7, .25, 1) 0.8s forwards;
+    }
+
+    @keyframes letter-drop {
+      0%   { opacity: 0; transform: translateY(-100vh); }
+      12%  { opacity: 1; }
+      78%  { opacity: 1; transform: translateY(0.08em); }
+      90%  { transform: translateY(-0.04em); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body { background: #121212; color: #e5e5e5; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #added-letter { animation: none; opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <main aria-label="Volkmann">
+    <span>Volkman</span><span id="added-letter" aria-hidden="true">n</span>
+  </main>
+  <script>
+    (() => {
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const redirectDelay = reducedMotion ? 1800 : 3900;
+      window.setTimeout(() => window.location.replace("/"), redirectDelay);
+    })();
+  </script>
+</body>
+</html>
